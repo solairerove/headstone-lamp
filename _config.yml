@@ -25,9 +25,11 @@ github_username:  solairerove
 
 # Build settings
 markdown: kramdown
-theme: tale
+remote_theme: chesterhow/tale
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-remote-theme
 
 permalink:    /:year-:month-:day/:title
 paginate:     5
