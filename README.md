@@ -11,5 +11,5 @@ You can find hosted static site on github pages [here](https://solairerove.githu
 ```bash
 gem install jekyll bundler
 bundle install
-jekkyl serve
+bundle exec jekyll serve
 ```

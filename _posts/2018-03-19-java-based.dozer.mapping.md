@@ -1,11 +1,13 @@
 ---
 layout: post
 title:  "Java based Dozer mapping"
-date:   2018-03-19 15:00:00 +0300
+date:   2018-07-13 15:29:00 +0300
 author: solairerove
 categories: dozer java
 ---
-To use Dozer add library due some dependency management
+Full application is on this [headstone-dozer](https://github.com/LostIzalith/headstone-dozer) repository on GitHub.
+
+To use Dozer add library due some dependency management:
 
 ```xml
 <!-- https://mvnrepository.com/artifact/net.sf.dozer/dozer -->
@@ -17,30 +19,17 @@ To use Dozer add library due some dependency management
 ```
 
 ```gradle
-// https://mvnrepository.com/artifact/net.sf.dozer/dozer
-compile group: 'net.sf.dozer', name: 'dozer', version: '5.5.1'
+compile('net.sf.dozer:dozer:5.5.1')
 ```
 
-Add java based Dozer configuration
+Add java based Dozer configuration:
 
 ```java
-/**
- * Configuration for Dozer.
- */
 @Configuration
-@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class DozerConfig {
 
-    private static final String PACKAGE_TO_SCAN = "path.to.bean.mappers.package";
+    private static final String PACKAGE_TO_SCAN = "com.lost.izalith.headstone.dozer.mapping";
 
-    private final List<CustomConverter> customConverters;
-
-    /**
-     * Dozer bean mapper configuration.
-     *
-     * @return return configured spring bean.
-     * @throws ReflectiveOperationException an exception.
-     */
     @Bean
     public DozerBeanMapper mapper() throws ReflectiveOperationException {
         final DozerBeanMapper mapper = new DozerBeanMapper();
@@ -63,21 +52,74 @@ public class DozerConfig {
 }
 ```
 
-Than add necessary bean mappers
+Than add necessary bean mappers:
 
 ```java
-/**
- * Mapping rules for Result to ResultResponse.
- */
-public class Result2ResultResponse extends BeanMappingBuilder {
+public class SimpleRequest2SimpleEntity extends BeanMappingBuilder {
 
     @Override
     protected void configure() {
-        mapping(Result.class, ResultResponse.class, TypeMappingOptions.oneWay())
-                .fields("id", "id")
-                .fields("status", "status")
-                .fields("result", "result", copyByReference());
+        mapping(HeadstoneSimpleRequest.class, HeadstoneSimpleEntity.class, TypeMappingOptions.oneWay())
+                .fields("name", "name")
+                .fields("key", "key")
+                .fields("value", "value");
     }
+}
+```
+
+```java
+public class SimpleEntity2SimpleResponse extends BeanMappingBuilder {
+
+    @Override
+    protected void configure() {
+        mapping(HeadstoneSimpleEntity.class, HeadstoneSimpleResponse.class, TypeMappingOptions.oneWay())
+                .fields("name", "awesomeName")
+                .fields("key", "key")
+                .fields("value", "value");
+    }
+}
+```
+
+Some simple endpoint for example:
+
+```java
+@RestController
+@RequestMapping("/headstone")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class HeadstoneController {
+
+    private final DozerBeanMapper dozerBeanMapper;
+
+    @PostMapping("/request")
+    public ResponseEntity<HeadstoneSimpleResponse> whateverIWantPost(
+            final @Valid @RequestBody HeadstoneSimpleRequest simpleRequest,
+            final UriComponentsBuilder uriComponentsBuilder) {
+
+        final UriComponents uriComponents = uriComponentsBuilder.path("/headstone/request").build();
+
+        final HeadstoneSimpleEntity simpleEntity = dozerBeanMapper.map(simpleRequest, HeadstoneSimpleEntity.class);
+
+        final HeadstoneSimpleResponse response = dozerBeanMapper.map(simpleEntity, HeadstoneSimpleResponse.class);
+
+        return ResponseEntity.created(uriComponents.toUri())
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .body(response);
+    }
+}
+```
+
+Now lets send request to endpoint:
+
+```http
+POST /headstone/request HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+	"name": "some name",
+	"key": "uuid",
+	"value": "lol"
 }
 ```
 
