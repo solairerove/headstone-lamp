@@ -238,6 +238,98 @@ public class SimpleRequest2SimpleEntity extends BeanMappingBuilder {
 }
 ```
 
-And all is work fine.
+And all is work fine:
 
-create custom converter as spring bean
+```http
+POST /headstone/request HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+	"name": "some name",
+	"key": "uuid",
+	"value": "lol",
+	"someEnum": "start"
+}
+```
+
+Now, lets create custom converter and inject some other bean into it.
+Here's service:
+
+```java
+@Service
+public class MyAwesomeService {
+
+    public String awesomeString() {
+        return "My awesome string";
+    }
+}
+```
+
+Here's brand new custom converter:
+
+```java
+@Component
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class MyAwesomeCustomConverter implements CustomConverter {
+
+    private final MyAwesomeService myAwesomeService;
+
+    @Override
+    public Object convert(final Object existingDestinationFieldValue,
+                          final Object sourceFieldValue,
+                          final Class<?> destinationClass,
+                          final Class<?> sourceClass) {
+
+        return myAwesomeService.awesomeString();
+    }
+}
+```
+
+And, as expected, using in mapper:
+
+```java
+public class SimpleRequest2SimpleEntity extends BeanMappingBuilder {
+
+    @Override
+    protected void configure() {
+        mapping(HeadstoneSimpleRequest.class, HeadstoneSimpleEntity.class, TypeMappingOptions.oneWay())
+                .fields("name", "name")
+                .fields("key", "key")
+                .fields("value", "value")
+                .fields("someEnum", "someEnum", FieldsMappingOptions.customConverter(SomeEnumConverter.class))
+                .fields("dataString", "myAwesomeString", customConverterId(
+                        MyAwesomeCustomConverter.class.getSimpleName()
+                ));
+    }
+}
+```
+
+And all is work fine:
+
+```http
+POST /headstone/request HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+	"name": "some name",
+	"key": "uuid",
+	"value": "lol",
+	"someEnum": "start"
+}
+```
+
+With response:
+
+```json
+{
+    "key": "uuid",
+    "value": "lol",
+    "someAction": "START",
+    "myAwesomeString": "My awesome string",
+    "name": "some name"
+}
+```
