@@ -123,6 +123,121 @@ Cache-Control: no-cache
 }
 ```
 
-create custom converter
+Dozer allow to use custom converters, for example to convert string to enum and etc. 
+So here's new custom converter:
+
+```java
+@Component
+public class SomeEnumConverter implements CustomConverter {
+
+    @Override
+    public Object convert(final Object existingDestinationFieldValue,
+                          final Object sourceFieldValue,
+                          final Class<?> destinationClass,
+                          final Class<?> sourceClass) {
+
+        return Optional.ofNullable(sourceFieldValue)
+                .map(e -> SomeEnum.ITEMS
+                        .stream()
+                        .filter(x -> x.getClientValue().equalsIgnoreCase(e.toString()))
+                        .findAny()
+                        .orElseThrow(() -> new IllegalArgumentException("Incorrect enum value " + e + ". "
+                                + "Possible values are " + SomeEnum.ITEMS)))
+                .orElse(null);
+    }
+}
+``` 
+
+And change config a little:
+
+```java
+@Configuration
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class DozerConfig {
+
+    private static final String PACKAGE_TO_SCAN = "com.lost.izalith.headstone.dozer.mapping";
+
+    private final List<CustomConverter> customConverters;
+
+    @Bean
+    public DozerBeanMapper mapper() throws ReflectiveOperationException {
+        final DozerBeanMapper mapper = new DozerBeanMapper();
+        final List<BeanMappingBuilder> registeredMapping = getRegisteredMappings();
+        registeredMapping.forEach(mapper::addMapping);
+
+        final HashMap<String, CustomConverter> converters = new HashMap<>(getCustomConvertersWithId());
+        mapper.setCustomConvertersWithId(converters);
+
+        return mapper;
+    }
+
+    private List<BeanMappingBuilder> getRegisteredMappings() throws ReflectiveOperationException {
+        final ClassPathScanningCandidateComponentProvider scanner = new ClassPathScanningCandidateComponentProvider(false);
+        scanner.addIncludeFilter(new AssignableTypeFilter(BeanMappingBuilder.class));
+
+        final List<BeanMappingBuilder> customMapping = new ArrayList<>();
+        for (final BeanDefinition bd : scanner.findCandidateComponents(PACKAGE_TO_SCAN)) {
+            customMapping.add((BeanMappingBuilder) Class.forName(bd.getBeanClassName()).newInstance());
+        }
+        return customMapping;
+    }
+
+    private Map<String, CustomConverter> getCustomConvertersWithId() {
+        final Map<String, CustomConverter> customConverterMap = new HashMap<>();
+        customConverters
+                .forEach(converter -> customConverterMap.put(converter.getClass().getSimpleName(), converter));
+
+        return customConverterMap;
+    }
+}
+```
+
+Add enum field in entity and string field in request:
+
+```java
+@Data
+public class HeadstoneSimpleRequest {
+
+    private String name;
+
+    private String key;
+
+    private String value;
+
+    private String someEnum;
+}
+```
+
+```java
+@Data
+public class HeadstoneSimpleEntity {
+
+    private String name;
+
+    private String key;
+
+    private String value;
+
+    private SomeEnum someEnum;
+}
+```
+
+Next step is change mapper a little:
+
+```java
+public class SimpleRequest2SimpleEntity extends BeanMappingBuilder {
+
+    @Override
+    protected void configure() {
+        mapping(HeadstoneSimpleRequest.class, HeadstoneSimpleEntity.class, TypeMappingOptions.oneWay())
+                .fields("name", "name")
+                .fields("key", "key")
+                .fields("value", "value")
+                .fields("someEnum", "someEnum", FieldsMappingOptions.customConverter(SomeEnumConverter.class));
+    }
+}
+```
+
+And all is work fine.
 
 create custom converter as spring bean
