@@ -13,6 +13,10 @@ So here we're.
 
 Shit Jekyll static site hosted on github pages with damn java and etc posts, written in md format lol.
 
-For fuck sake i did it.
+For fuck sake.
 
 ![NonStop](https://f.ptcdn.info/481/002/000/1361555115-j1-o.jpg)
+
+You can find me here [github](https://github.com/solairerove),
+[linkedin](https://www.linkedin.com/in/nikita-krivitski-solairerove/) 
+or just send mail on `hax2033@gmail.com` or `solairerove@gmail.com`

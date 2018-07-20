@@ -4,6 +4,7 @@ title:  "Java based Dozer mapping"
 date:   2018-07-13 15:29:00 +0300
 author: solairerove
 categories: dozer java
+permalink: /java-based-dozer/
 ---
 Full application is on this [headstone-dozer](https://github.com/LostIzalith/headstone-dozer) repository on GitHub.
 
