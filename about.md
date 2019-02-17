@@ -1,8 +1,6 @@
 ---
-layout: post
+layout: page
 title: About
-date:   2018-03-20 10:21:00 +0300
-author: solairerove
 permalink: /about/
 ---
 
@@ -17,6 +15,9 @@ For fuck sake.
 
 ![NonStop](https://f.ptcdn.info/481/002/000/1361555115-j1-o.jpg)
 
+### Contact me
+
 You can find me here [github](https://github.com/solairerove),
 [linkedin](https://www.linkedin.com/in/nikita-krivitski-solairerove/) 
 or just send mail on `hax2033@gmail.com` or `solairerove@gmail.com`
+[email@domain.com](mailto:solairerove@gmail.com)
