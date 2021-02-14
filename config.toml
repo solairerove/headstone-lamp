@@ -1,4 +1,4 @@
 baseURL = "https://solairerove.github.io/headstone-lamp/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Hugo Site"
 theme = "ananke"
