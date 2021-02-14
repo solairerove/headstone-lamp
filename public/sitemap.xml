@@ -3,26 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/posts/my-first-post/</loc>
+    <loc>https://solairerove.github.io/headstone-lamp/posts/my-first-post/</loc>
     <lastmod>2021-02-14T19:26:04+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://solairerove.github.io/headstone-lamp/</loc>
     <lastmod>2021-02-14T19:26:04+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/posts/</loc>
+    <loc>https://solairerove.github.io/headstone-lamp/posts/</loc>
     <lastmod>2021-02-14T19:26:04+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://solairerove.github.io/headstone-lamp/categories/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://solairerove.github.io/headstone-lamp/tags/</loc>
   </url>
   
 </urlset>
