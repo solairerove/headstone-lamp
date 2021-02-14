@@ -16,6 +16,10 @@
 
 `hugo server -D`
 
+## Build static pages
+
+`hugo -D -d /Users/solairerove/workspace/solairerove/solairerove.github.io`
+
 ## Quick Start
 
 [gohugo.io](https://gohugo.io/getting-started/quick-start/)

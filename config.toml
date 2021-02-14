@@ -1,4 +1,4 @@
-baseURL = "https://solairerove.github.io/headstone-lamp/"
+baseURL = "https://solairerove.github.io/"
 languageCode = "en-us"
 title = "Hugo Site"
 theme = "ananke"
