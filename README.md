@@ -1,15 +1,21 @@
-# headstone-lamp
+# Headstone lamp
 
-## Agenda
+## Install Hugo
 
-Made with [Jekkyl](https://jekyllrb.com/) using the [Tale](https://github.com/chesterhow/tale/) theme
+`brew install hugo`
 
-You can find hosted static site on github pages [here](https://solairerove.github.io/headstone-lamp/)
+## Add a Theme
 
-## To start locally
+`git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke`
 
-```bash
-gem install jekyll bundler
-bundle install
-bundle exec jekyll serve
-```
+## Add Some Content
+
+`hugo new posts/my-first-post.md`
+
+## Start the Hugo server
+
+`hugo server -D`
+
+## Quick Start
+
+[gohugo.io](https://gohugo.io/getting-started/quick-start/)
