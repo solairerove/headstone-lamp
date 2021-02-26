@@ -8,6 +8,10 @@
 
 `git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke`
 
+## Clone theme
+
+`git submodule update --init --recursive`
+
 ## Add Some Content
 
 `hugo new posts/my-first-post.md`
