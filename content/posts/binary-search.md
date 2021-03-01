@@ -12,7 +12,7 @@ draft: true
 Можно перебирать все вариант подряд: 1, 2, 3, 4.
 А можно исключить сразу половину чисел на каждом шаге: 50, 75, 63.
 
-[binary search](https://github.com/solairerove/algs4-leprosorium/blob/d86025ab778bafb214f631ddff23c71e970ef325/src/main/kotlin/com/github/solairerove/algs4/leprosorium/classic/BinarySearch.kt#L14)
+[binary search](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/searching/BinarySearch.kt)
 
 ```kotlin
 // O(log(n)) time | O(1) space
