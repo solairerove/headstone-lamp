@@ -27,7 +27,14 @@ Transform array to heap (heapify)
 ```kotlin
 class MinHeap(arr: MutableList<Int>) {
 
-    private val heap = buildHeap(arr)
+    private var heap: MutableList<Int> = arr
+
+    init {
+        val n = arr.size
+        for (k in n / 2 downTo 0) {
+            sink(arr, k, n - 1)
+        }
+    }
 
     // O(1) time | O(1) space
     fun peek(): Int {
@@ -47,16 +54,6 @@ class MinHeap(arr: MutableList<Int>) {
     fun insert(value: Int) {
         heap.add(value)
         swim(heap, heap.size - 1)
-    }
-
-    // O(n) time | O(1) space
-    private fun buildHeap(arr: MutableList<Int>): MutableList<Int> {
-        val parentIdx = (arr.size - 2) / 2
-        for (k in parentIdx downTo 0) {
-            sink(arr, k, arr.size - 1)
-        }
-
-        return arr
     }
 
     // O(log(n)) time | O(1) space
