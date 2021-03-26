@@ -4,7 +4,7 @@ date: 2021-03-09T17:45:39+03:00
 draft: true
 ---
 
-To be continued...
+build heap from array and n time get min element. (naive heap sort)
 
 [heap sort](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/sorting/HeapSort.kt)
 
