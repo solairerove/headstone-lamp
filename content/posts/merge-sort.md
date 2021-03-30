@@ -15,7 +15,7 @@ draft: true
 [merge sort](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/sorting/MergeSort.kt)
 
 ```kotlin
-// O(nlog(n)) time | O(nlog(n)) space
+// O(nlog(n)) time | O(n) space
 fun mergeSort(arr: MutableList<Int>) {
     val n = arr.size
 
