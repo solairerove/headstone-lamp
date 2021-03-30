@@ -14,7 +14,7 @@ draft: true
 fun getNthFibonacci(n: Int): Int {
     val lastTwo = mutableListOf(0, 1)
 
-    for (cnt in 3..n) {
+    repeat(n - 2) {
         val next = lastTwo.sum()
         lastTwo[0] = lastTwo[1]
         lastTwo[1] = next
