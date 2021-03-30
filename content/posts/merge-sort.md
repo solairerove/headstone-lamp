@@ -4,13 +4,18 @@ date: 2021-03-26T17:28:02+03:00
 draft: true
 ---
 
-Еще добавлю описание. пока нихуя не помню.
-Ну тип сплитает массив на подмассивы и потом мержит саблисты.
+Классический эффективный алгоритм сортировки divide and conquer. \
+Разделяем массив на подмассивы до подмассивов размером 1 и \
+собираем их в отсортированные подмассивы.
+
+Почему O(nlog(n)). \
+Потому что у нас всего nlog(n) операций, которые сами по себе O(n).
+
 
 [merge sort](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/sorting/MergeSort.kt)
 
 ```kotlin
-// O(nlog(n)) time | O(n) space
+// O(nlog(n)) time | O(nlog(n)) space
 fun mergeSort(arr: MutableList<Int>) {
     val n = arr.size
 
