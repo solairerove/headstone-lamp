@@ -11,6 +11,7 @@ draft: true
 Почему O(nlog(n)). \
 Потому что у нас всего nlog(n) операций, которые сами по себе O(n).
 
+[princeton mergesort](https://algs4.cs.princeton.edu/22mergesort/)
 
 [merge sort](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/sorting/MergeSort.kt)
 
