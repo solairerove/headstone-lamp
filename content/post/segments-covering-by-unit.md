@@ -2,6 +2,7 @@
 title: "Segments Covering by Unit"
 date: 2021-03-04T13:00:03+03:00
 draft: true
+categories: ["greedy"]
 ---
 
 Даны отрезки на прямой. Найти такие точки, которые лежат на всех заданных отрезках. 

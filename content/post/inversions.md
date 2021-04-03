@@ -2,6 +2,7 @@
 title: "Inversions"
 date: 2021-03-31T23:10:38+03:00
 draft: true
+categories: ["sorting"]
 ---
 
 Вытекающая задача из сортировки слиянием. \

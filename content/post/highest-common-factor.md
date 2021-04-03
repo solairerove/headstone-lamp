@@ -2,6 +2,7 @@
 title: "Highest Common Factor"
 date: 2021-03-02T13:27:30+03:00
 draft: true
+categories: ["recursion"]
 ---
 
 Рекурсивный вариант алгоритма Евклида для нахождения наибольшего общего делителя.

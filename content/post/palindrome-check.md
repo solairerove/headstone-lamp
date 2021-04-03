@@ -2,6 +2,7 @@
 title: "Palindrome Check"
 date: 2021-03-03T16:56:50+03:00
 draft: true
+categories: ["strings"]
 ---
 
 Палиндром - строка, которая одинаково читается в обоих направлениях.

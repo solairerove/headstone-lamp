@@ -2,6 +2,7 @@
 title: "Insertion Sort"
 date: 2021-03-01T16:55:11+03:00
 draft: true
+categories: ["sorting"]
 ---
 
 Один из алгоритмов сортировки.

@@ -2,6 +2,7 @@
 title: "Minimum Waiting Time"
 date: 2021-03-08T17:27:29+03:00
 draft: true
+categories: ["greedy"]
 ---
 
 Given non-empty array of positive int, that define time to execute.\

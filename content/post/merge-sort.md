@@ -2,6 +2,7 @@
 title: "Merge Sort"
 date: 2021-03-26T17:28:02+03:00
 draft: true
+categories: ["sorting"]
 ---
 
 Классический эффективный алгоритм сортировки divide and conquer. \

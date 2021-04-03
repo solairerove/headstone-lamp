@@ -2,6 +2,7 @@
 title: "Naive Huffman Encode"
 date: 2021-03-07T15:55:23+03:00
 draft: true
+categories: ["greedy"]
 ---
 
 [Формулировка задачи](https://neerc.ifmo.ru/wiki/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A5%D0%B0%D1%84%D1%84%D0%BC%D0%B0%D0%BD%D0%B0)

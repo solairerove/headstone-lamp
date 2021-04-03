@@ -2,6 +2,7 @@
 title: "Fibonacci"
 date: 2021-03-02T11:33:16+03:00
 draft: true
+categories: ["recursion"]
 ---
 
 Один из классических рекурсивных алгоритмов.

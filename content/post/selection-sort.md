@@ -2,6 +2,7 @@
 title: "Selection Sort"
 date: 2021-03-01T13:40:33+03:00
 draft: true
+categories: ["sorting"]
 ---
 
 Один из не эффективных алгоритмов сортировки.

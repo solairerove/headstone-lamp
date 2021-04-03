@@ -2,6 +2,7 @@
 title: "Min Heap"
 date: 2021-03-11T20:27:42+03:00
 draft: true
+categories: ["heap"]
 ---
 
 Main methods:

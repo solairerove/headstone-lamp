@@ -2,6 +2,7 @@
 title: "Heap Sort"
 date: 2021-03-09T17:45:39+03:00
 draft: true
+categories: ["sorting"]
 ---
 
 build heap from array and n time get min element. (naive heap sort)
