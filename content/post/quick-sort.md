@@ -16,11 +16,7 @@ categories: ["sorting"]
 
 ```kotlin
 // O(nlog(n)) time | O(log(n)) space
-fun quickSort(arr: MutableList<Int>) {
-    quickSort(arr, 0, arr.size - 1)
-}
-
-fun quickSort(arr: MutableList<Int>, low: Int, high: Int) {
+fun quickSort(arr: MutableList<Int>, low: Int = 0, high: Int = arr.size - 1) {
     if (high <= low) return
 
     val j = partition(arr, low, high)
