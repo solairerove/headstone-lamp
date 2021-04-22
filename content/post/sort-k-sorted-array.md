@@ -8,14 +8,15 @@ categories: ["heap"]
 Input: arr = [6, 5, 3, 2, 8, 10, 9], k = 3 \
 Output: [2, 3, 5, 6, 8, 9, 10]
 
-[merge k sorted arrays](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/heap/MergeKSortedArrays.kt)
+[merge k sorted arrays](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/heap/MergeKSortedArrays.kt) \
 [min heap](https://solairerove.github.io/post/min-heap/)
 
 ```kotlin
 // O(nlog(k)) time | O(k) space
 // n - total elements, k is k
 fun sortKSortedArrays(arr: MutableList<Int>, k: Int) {
-    val minHeap = MinHeap(arr.slice(0..min(k, arr.size - 1)).toMutableList())
+    val sliceIdx = if (k + 1 < arr.size) k + 1 else arr.size
+    val minHeap = MinHeap(arr.subList(0, sliceIdx).toMutableList())
 
     var idx = 0
     for (i in k + 1 until arr.size) {
