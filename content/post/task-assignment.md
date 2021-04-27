@@ -5,7 +5,11 @@ draft: true
 categories: ["greedy"]
 ---
 
-Найти максимальную сумму скоростей тандема велосипедистов.
+Find the fastest time to complete all tasks,
+if worker can proceed only 2 tasks
+
+k is a number of workers \
+tasks is an array of task duration
 
 Input: tasks = [2, 4, 6, 1, 5, 3], k = 3 \
 Output: [[3, 2], [0, 4], [5, 1]]
