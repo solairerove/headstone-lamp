@@ -8,7 +8,7 @@ categories: ["strings"]
 Input: "abc" \
 Output: "cde"
 
-- [caesar cipher encryptor](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/strings/CaesarCipherEncryptor.kt)
+[caesar cipher encryptor](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/strings/CaesarCipherEncryptor.kt)
 
 ```kotlin
 // O(n) time | O(n) space

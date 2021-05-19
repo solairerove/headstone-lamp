@@ -8,7 +8,7 @@ categories: ["arrays"]
 Input:  [1, 2, 3, 4, 6] \
 Output: [144, 72, 48, 36, 24]
 
-- [array of products](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/arrays/ArrayOfProducts.kt)
+[array of products](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/arrays/ArrayOfProducts.kt)
 
 ```kotlin
 // O(n) time | O(n) space
