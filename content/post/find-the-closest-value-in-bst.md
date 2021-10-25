@@ -16,6 +16,10 @@ Output: 15
 
 [find the closest value](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/binary_search_tree/FIndTheClosestValue.kt)
 
+Iterate through tree. Find the closest value to target. \
+The closest is the smallest delta result, \
+so it can be represented as `abs(target - value) < abs(target - closest)` 
+
 ```kotlin
 open class BST(var value: Int) {
     var left: BST? = null
@@ -29,9 +33,7 @@ fun findTheClosestValueInBst(tree: BST?, target: Int): Int {
     var node = tree
 
     inner@ while (node != null) {
-        if (abs(target - node.value) < abs(target - closest)) {
-            closest = node.value
-        }
+        if (abs(target - node.value) < abs(target - closest)) closest = node.value
 
         node = when {
             target < node.value -> node.left
