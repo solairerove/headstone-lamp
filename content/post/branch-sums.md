@@ -17,7 +17,7 @@ Output: [24, 25, 32, 36]
 [branch sums](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/binary_tree/BranchSums.kt) \
 [easy leetcode version](https://leetcode.com/problems/path-sum/)
 
-Make pre order tree traversal, summarize current value. \ 
+Make pre order tree traversal, summarize current value. \
 If there's no left or right, we're done with branch.
 
 ```kotlin
