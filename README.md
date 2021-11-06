@@ -14,7 +14,7 @@
 
 ## Add Some Content
 
-`hugo new posts/my-first-post.md`
+`hugo new post/my-first-post.md`
 
 ## Start the Hugo server
 
