@@ -14,7 +14,8 @@ categories: ["binary search tree"]
 Input: 16 \
 Output: 15
 
-[find the closest value](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/binary_search_tree/FIndTheClosestValue.kt)
+[find the closest value](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/binary_search_tree/FIndTheClosestValue.kt) \
+[leetcode](https://leetcode.com/problems/closest-binary-search-tree-value/)
 
 Iterate through tree. Find the closest value to target. \
 The closest is the smallest delta result, \
@@ -27,8 +28,8 @@ open class BST(var value: Int) {
 }
 
 // O(log(n)) time | O(1) space
-// worst O(n) time | O(1) space
-fun findTheClosestValueInBst(tree: BST?, target: Int): Int {
+// worst O(n) time | O(1) space if bst has one branch
+fun findTheClosestValueInBst(tree: BSTNode?, target: Int): Int {
     var closest = tree!!.value
     var node = tree
 

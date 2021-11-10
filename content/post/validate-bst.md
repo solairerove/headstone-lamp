@@ -32,11 +32,7 @@ open class BST(var value: Int) {
 }
 
 // O(n) time | O(d) space
-fun validateBST(tree: BSTNode): Boolean {
-    return isBST(node = tree, min = Int.MIN_VALUE, max = Int.MAX_VALUE)
-}
-
-fun isBST(node: BSTNode?, min: Int?, max: Int?): Boolean {
+fun isBST(node: BSTNode?, min: Int? = Int.MIN_VALUE, max: Int? = Int.MAX_VALUE): Boolean {
     if (node == null) return true
     if (min != null && node.value < min) return false
     if (max != null && node.value >= max) return false
