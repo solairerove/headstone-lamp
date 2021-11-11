@@ -25,7 +25,7 @@ open class BST(var value: Int) {
 }
 
 // O(n) time | O(n) space
-fun sortedArrayToBST(arr: IntArray, low: Int = 0, high: Int = arr.size): BSTNode? {
+fun sortedArrayToBST(arr: IntArray, low: Int = 0, high: Int = arr.size - 1): BSTNode? {
     if (high < low) return null
 
     val mid = low + (high - low) / 2
