@@ -24,18 +24,13 @@ open class BST(var value: Int) {
     var right: BST? = null
 }
 
-private var i = 0
-
 // O(n) time | O(n) space
-fun bstFromPreorder(preorder: List<Int>): BSTNode? {
-    return constructBST(preorder)
-}
-
-fun constructBST(preorder: List<Int>, bound: Int = Int.MAX_VALUE): BSTNode? {
+var i = 0
+fun bstFromPreorder(preorder: IntArray, bound: Int = Int.MAX_VALUE): BSTNode? {
     if (i == preorder.size || preorder[i] > bound) return null
-    val root = BSTNode(value = preorder[i++])
-    root.left = constructBST(preorder, root.value)
-    root.right = constructBST(preorder, bound)
+    val root = BSTNode(preorder[i++])
+    root.left = bstFromPreorder(preorder, root.value)
+    root.right = bstFromPreorder(preorder, bound)
     return root
 }
 ```
