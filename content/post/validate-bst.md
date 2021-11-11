@@ -15,6 +15,7 @@ Output: true
 
 [validate bst](https://github.com/solairerove/algs4-leprosorium/blob/master/src/main/kotlin/com/github/solairerove/algs4/leprosorium/binary_search_tree/ValidateBST.kt) \
 [https://algs4.cs.princeton.edu/32bst/BST.java.html#isBST](https://algs4.cs.princeton.edu/32bst/BST.java.html)
+[leetcode](https://leetcode.com/problems/validate-binary-search-tree/)
 
 Recursive version of `isBST` method. \
 BST is valid:
