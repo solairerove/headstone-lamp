@@ -6,15 +6,23 @@
 
 ## Add a Theme
 
-`git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even`
+```shell
+mkdir themes
+cd themes
+git clone https://github.com/athul/archie.git
+```
 
-## Clone theme
+# Writing Posts
+Create a new .md file in the content/posts folder
 
-`git submodule update --init --recursive`
-
-## Add Some Content
-
-`hugo new post/my-first-post.md`
+```
+---
+title: 11. Container With Most Water
+description: medium
+date: 2023-03-20
+tags: [two-pointers, arrays] 
+---
+```
 
 ## Start the Hugo server
 
