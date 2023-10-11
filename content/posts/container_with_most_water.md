@@ -2,7 +2,7 @@
 title: 11. Container With Most Water
 description: medium
 date: 2023-03-20
-tags: [two-pointers, arrays] 
+tags: [ two-pointers, arrays ] 
 ---
 
 ```python
