@@ -15,5 +15,5 @@ def reverse_list(self, head: Optional[ListNode]) -> Optional[ListNode]:
     return prev
 ```
 
-traverse linked list using `curr` pointer. relink `curr.next` to `prev` each step on iteration.
+traverse linked list using `curr` pointer. relink `curr.next` to `prev` each step on iteration. \
 return the `prev` as head of reversed list
