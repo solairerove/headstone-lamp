@@ -9,7 +9,7 @@ pygmentsstyle = "emacs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-paginate=3 # articles per page
+paginate=5 # articles per page
 
 [params]
 mode="auto" # color-mode → light,dark,toggle or auto
@@ -23,11 +23,6 @@ katex = true # enable KaTeX support
 name = "GitHub"
 icon = "github"
 url = "https://github.com/solairerove"
-
-[[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/solairerove"
 
 # Main menu Items
 
