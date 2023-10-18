@@ -1,8 +1,8 @@
 ---
 title: 876. Middle of the Linked List
-description: easy
+description: traverse with slow and fast pointers, when fast reached the end, slow is the middle 
 date: 2023-10-11
-tags: [ linked-list, grind-169 ] 
+tags: [ linked-list, grind-169, easy ] 
 ---
 
 ```python

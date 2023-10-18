@@ -1,8 +1,8 @@
 ---
 title: 206. Reverse Linked List
-description: easy
+description: traverse and relink current.next -> prev 
 date: 2023-10-18
-tags: [ linked-list, grind-169 ] 
+tags: [ linked-list, grind-169, easy ] 
 ---
 
 ```python

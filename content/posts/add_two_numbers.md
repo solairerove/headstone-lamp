@@ -1,8 +1,8 @@
 ---
 title: 2. Add Two Numbers
-description: medium
+description: calculate sum in column like in sum with in memory value
 date: 2023-10-18
-tags: [ linked-list, grind-169 ] 
+tags: [ linked-list, grind-169, medium ] 
 ---
 
 ```python

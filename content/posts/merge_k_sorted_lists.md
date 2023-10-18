@@ -1,8 +1,8 @@
 ---
 title: 23. Merge k Sorted Lists
-description: hard
+description: group by two lists and merge using problem 21
 date: 2023-10-18
-tags: [ linked-list, grind-169 ] 
+tags: [ linked-list, grind-169, hard ] 
 ---
 
 ```python
