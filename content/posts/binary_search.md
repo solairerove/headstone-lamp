@@ -1,7 +1,7 @@
 ---
 title: 704. Binary Search
 description: on each iteration decrease search space in two times
-date: 2023-10-18
+date: 2023-10-20
 tags: [ binary-search, easy ] 
 ---
 
