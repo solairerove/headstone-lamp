@@ -15,6 +15,12 @@ def single_number(self, nums: List[int]) -> int:
     return res
 ```
 
+```python
+# O(n) time || O(1) space
+def single_number_reduce(self, nums: List[int]) -> int:
+    return functools.reduce(lambda x, y: x ^ y, nums)
+```
+
 To find the element that appears only once in the array with a linear runtime complexity and constant extra space, \
 you can utilize the XOR operator.
 
