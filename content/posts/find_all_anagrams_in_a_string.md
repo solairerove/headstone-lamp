@@ -38,4 +38,4 @@ def find_anagrams(self, s: str, p: str) -> List[int]:
 3) Sliding Window:
    - Iterate from `i = len(p)` to `len(s)`. For each `i`:
      - Compare the two frequency tables. If they are the same, the current window is an anagram of `p`, so append `i - len(p)` to result.
-     - Slide the window: decrement the count of the character that is left behind `(s[i - len(p)])` and increment the count of the new character `(s[i])`.
+     - Slide the window: decrement the count of the character that is left behind `s[i - len(p)]` and increment the count of the new character `s[i]`.
