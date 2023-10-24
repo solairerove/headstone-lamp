@@ -30,12 +30,12 @@ def find_anagrams(self, s: str, p: str) -> List[int]:
 ```
 
 1) Initialization:
-    - First, set up two lists of size 26 (assuming lowercase English letters) to act as frequency tables for p and the current window in s.
-    - Initialize a list result to store the starting indices of the anagrams in s.
+    - First, set up two lists of size 26 (assuming lowercase English letters) to act as frequency tables for `p` and the current window in `s`.
+    - Initialize a list result to store the starting indices of the anagrams in `s`.
 2) Setup:
-   - Count the frequency of each character in p and store it in the frequency table for p.
-   - Count the frequency of characters in the initial window of s (i.e., the first len(p) characters) and store it in the frequency table for s.
+   - Count the frequency of each character in `p` and store it in the frequency table for `p`.
+   - Count the frequency of characters in the initial window of `s` (i.e., the first `len(p)` characters) and store it in the frequency table for `s`.
 3) Sliding Window:
-   - Iterate from i = len(p) to len(s). For each i:
-     - Compare the two frequency tables. If they are the same, the current window is an anagram of p, so append i - len(p) to result.
-     - Slide the window: decrement the count of the character that is left behind (s[i - len(p)]) and increment the count of the new character (s[i]).
+   - Iterate from `i = len(p)` to `len(s)`. For each `i`:
+     - Compare the two frequency tables. If they are the same, the current window is an anagram of `p`, so append `i - len(p)` to result.
+     - Slide the window: decrement the count of the character that is left behind `(s[i - len(p)])` and increment the count of the new character `(s[i])`.
