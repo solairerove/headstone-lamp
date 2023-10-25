@@ -9,21 +9,21 @@ tags: [ array, medium ]
 # O(n^3) time || O(1) space
 def four_sum(self, nums: List[int], target: int) -> List[List[int]]:
     nums.sort()
-    res, n = [], len(nums)
-    for i in range(n - 3):
+    quadruplets = []
+    for i in range(len(nums) - 3):
         if i > 0 and nums[i] == nums[i - 1]:
             continue
 
-        for j in range(i + 1, n - 2):
+        for j in range(i + 1, len(nums) - 2):
             if j > i + 1 and nums[j] == nums[j - 1]:
                 continue
 
-            low, high = j + 1, n - 1
+            low, high = j + 1, len(nums) - 1
             while low < high:
                 sum_ = nums[i] + nums[j] + nums[low] + nums[high]
 
                 if sum_ == target:
-                    res.append([nums[i], nums[j], nums[low], nums[high]])
+                    quadruplets.append([nums[i], nums[j], nums[low], nums[high]])
                     low, high = low + 1, high - 1
 
                     while low < high and nums[low] == nums[low - 1]:
@@ -37,11 +37,10 @@ def four_sum(self, nums: List[int], target: int) -> List[List[int]]:
                 else:
                     high -= 1
 
-    return res
+    return quadruplets
 ```
 
-To solve this problem, you can use a similar approach to the one used for the 3Sum problem \
-but with an additional layer of nested loops. Here's a general approach:
+To solve this problem, you can use a similar approach to the one used for the 3Sum problem but with an additional layer of nested loops. Here's a general approach:
 
     Sort the array: This helps in skipping over duplicate values and in using the two-pointer technique.
 
@@ -55,9 +54,6 @@ but with an additional layer of nested loops. Here's a general approach:
     Move the pointers based on the sum comparison with the target.
 
 Wrapping Up
-After the while loop, we return to our nested for loops and try the next pair of i and j. \
-Once all loops are complete, we return the result.
+After the while loop, we return to our nested for loops and try the next pair of i and j. Once all loops are complete, we return the result.
 
-In summary, the core idea is to fix the first two numbers using nested loops and \
-then find the other two numbers using the two-pointer approach. \
-The conditions inside the loops ensure we don't get duplicate quadruplets.
+In summary, the core idea is to fix the first two numbers using nested loops and then find the other two numbers using the two-pointer approach. The conditions inside the loops ensure we don't get duplicate quadruplets.
