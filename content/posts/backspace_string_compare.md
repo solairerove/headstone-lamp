@@ -2,7 +2,7 @@
 title: 844. Backspace String Compare
 description: compare reversed string with `#` times skip
 date: 2023-10-19
-tags: [ two-pointers, arrays, easy ]
+tags: [ arrays, two-pointers, stack, easy ]
 ---
 
 ```python
@@ -24,9 +24,9 @@ def backspace_compare_two_pointers(self, s: str, t: str) -> bool:
 ```python
 # O(n + m) time || O(n + m) space
 def backspace_compare_stack(self, s: str, t: str) -> bool:
-    def trim(line):
+    def trim(to_trim):
         stack = []
-        for c in line:
+        for c in to_trim:
             if c != '#':
                 stack.append(c)
             elif stack:
