@@ -75,17 +75,17 @@ We're creating a new string (newStr) by removing the character at index j from t
 
 Let's break it down:
 
-1) currentStr[:j]: This slices the string from the beginning up to, but not including, index j. It takes all characters
+1) `currentStr[:j]`: This slices the string from the beginning up to, but not including, index j. It takes all characters
 before the j-th character.
-2) currentStr[j+1:]: This slices the string from the position after j till the end. So, it takes all characters after the
+2) `currentStr[j+1:]`: This slices the string from the position after j till the end. So, it takes all characters after the
 j-th character.
 By concatenating these two slices together, we essentially remove the character at index j.
 
 #### Example:
 Suppose currentStr = "abcde" and j = 2.
 
-1) currentStr[:j] would be "ab"
-2) currentStr[j+1:] would be "de"
+1) `currentStr[:j]` would be "ab"
+2) `currentStr[j+1:]` would be "de"
 When you concatenate them: "ab" + "de" = "abde".
 
 As you can see, the character at index 2 (which is "c") has been removed from the original string.
