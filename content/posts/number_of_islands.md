@@ -1,8 +1,8 @@
 ---
 title: 200. Number of Islands
-description: 
+description:
 date: 2023-10-26
-tags: [ arrays, dfs, medium ]
+tags: [ arrays, dfs-bfs medium ]
 ---
 
 ```python
@@ -56,12 +56,42 @@ def num_islands_dfs_shorter(self, grid: List[List[str]]) -> int:
     return res
 ```
 
-This problem is a classic example where Depth First Search (DFS) can be used. Every time we find a "1", we start a DFS traversal to mark all the connected "1"s. Every island will initiate exactly one DFS traversal. Therefore, by counting how many times DFS is called, we can find out the number of islands.
+```python
+# O(n * m) time || O(min(n, m)) space
+def num_islands_bfs(self, grid: List[List[str]]) -> int:
+    if not grid:
+        return 0
+
+    n, m = len(grid), len(grid[0])
+    res = 0
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    for i in range(n):
+        for j in range(m):
+            if grid[i][j] == "1":
+                grid[i][j] = "0"
+                res += 1
+                dq = collections.deque([(i, j)])
+                while dq:
+                    x, y = dq.popleft()
+                    for dx, dy in directions:
+                        nx, ny = x + dx, y + dy
+                        if 0 <= nx < n and 0 <= ny < m and grid[nx][ny] == "1":
+                            dq.append((nx, ny))
+                            grid[nx][ny] = "0"
+
+    return res
+```
+
+This problem is a classic example where Depth First Search (DFS) can be used. Every time we find a "1", we start a DFS
+traversal to mark all the connected "1"s. Every island will initiate exactly one DFS traversal. Therefore, by counting
+how many times DFS is called, we can find out the number of islands.
 
 Here's how the algorithm works:
 
 1) Loop through each cell in the grid.
 2) If the cell value is "1", increment our island counter and start a DFS traversal from that cell.
 3) Within the DFS traversal, mark the visited cell as "0" (water) to ensure we don't visit it again.
-4) Visit the 4 possible directions from the current cell (top, bottom, left, right). If we find a cell with value "1", continue the DFS traversal from that cell.
-5) Once we have visited all the cells of an island using DFS, return to the main loop and continue checking the next cell.
+4) Visit the 4 possible directions from the current cell (top, bottom, left, right). If we find a cell with value "1",
+   continue the DFS traversal from that cell.
+5) Once we have visited all the cells of an island using DFS, return to the main loop and continue checking the next
+   cell.
