@@ -1,8 +1,8 @@
 ---
 title: 200. Number of Islands
-description:
+description: Every time we find a "1", we start a DFS traversal to mark all the connected "1"s.
 date: 2023-10-26
-tags: [ arrays, dfs-bfs medium ]
+tags: [ arrays, dfs-bfs, medium ]
 ---
 
 ```python
