@@ -21,9 +21,8 @@ def remove_invalid_parentheses(self, s: str) -> List[str]:
 
         return cnt == 0
 
-    stack, visited, found, res = [s], {s}, False, []
+    res, stack, visited, found = [], [s], {s}, False
     while stack and not found:
-        curr_level = []
         for curr_str in stack:
             if is_valid(curr_str):
                 found = True
@@ -37,7 +36,6 @@ def remove_invalid_parentheses(self, s: str) -> List[str]:
                     if new_str not in visited:
                         visited.add(new_str)
                         stack.append(new_str)
-        stack = curr_level
 
     return res
 ```
