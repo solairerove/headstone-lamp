@@ -27,7 +27,6 @@ def ship_within_days(self, weights: List[int], days: int) -> int:
     return low
 ```
 
-
 Determine the search space: \
 The minimum possible weight capacity of the ship would be the maximum weight among all the packages, \
 and the maximum possible weight capacity of the ship would be the sum of all the package weights.

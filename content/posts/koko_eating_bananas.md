@@ -19,8 +19,11 @@ def min_eating_speed(self, piles: List[int], h: int) -> int:
     return high
 ```
 
-if the current speed is workable, the minimum workable speed should be on its left inclusively. if the current speed is not workable, that is, too slow to finish the eating task, then the minimum workable speed should be on its right exclusively.
+if the current speed is workable, the minimum workable speed should be on its left inclusively. if the current speed is
+not workable, that is, too slow to finish the eating task, then the minimum workable speed should be on its right
+exclusively.
 
-therefore, we can use binary search to locate the boundary that separates workable speeds and unworkable speeds, to get the minimum workable speed.
+therefore, we can use binary search to locate the boundary that separates workable speeds and unworkable speeds, to get
+the minimum workable speed.
 
 find current speed by traversing piles, adjust border depends on speed.
