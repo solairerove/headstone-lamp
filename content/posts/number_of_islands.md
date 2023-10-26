@@ -20,8 +20,6 @@ def num_islands_dfs(self, grid: List[List[str]]) -> int:
             dfs(i + 1, j)
             dfs(i, j - 1)
             dfs(i, j + 1)
-        else:
-            return
 
     res = 0
     for i in range(n):
