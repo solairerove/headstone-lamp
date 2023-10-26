@@ -35,8 +35,7 @@ def group_anagrams_count_approach(self, strs: List[str]) -> List[List[str]]:
     return list(dic.values())
 ```
 
-For each string in the given array, sort its characters and use the sorted string as a key to the hashmap. \
-Append the original string to the list associated with the key in the hashmap.
+For each string in the given array, sort its characters and use the sorted string as a key to the hashmap. Append the original string to the list associated with the key in the hashmap.
 
 Small improvement
 
