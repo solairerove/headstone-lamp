@@ -1,6 +1,6 @@
 ---
 title: 977. Squares of a Sorted Array
-description: use two pointers and compare using abs
+description: use two pointers and compare left and right num using abs
 date: 2023-10-26
 tags: [ arrays, two-pointers, easy ]
 ---
@@ -8,15 +8,15 @@ tags: [ arrays, two-pointers, easy ]
 ```python
 # O(n) time || O(1) space
 def sorted_squares(self, nums: List[int]) -> List[int]:
-    n = len(nums)
-    res = [0] * n
-    low, high, pos = 0, n - 1, n - 1
+    res = [0] * len(nums)
+    pos = len(nums) - 1
+    low, high = 0, len(nums) - 1
     while low <= high:
         if abs(nums[low]) > abs(nums[high]):
-            res[pos] = nums[low] * nums[low]
+            res[pos] = nums[low] ** 2
             low += 1
         else:
-            res[pos] = nums[high] * nums[high]
+            res[pos] = nums[high] ** 2
             high -= 1
         pos -= 1
 
