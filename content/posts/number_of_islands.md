@@ -52,17 +52,17 @@ def num_islands_dfs_shorter(self, grid: List[List[str]]) -> int:
 # O(n * m) time || O(min(n, m)) space
 def num_islands_bfs(self, grid: List[List[str]]) -> int:
     n, m = len(grid), len(grid[0])
-    directions = [(-1, 0), (1, 0), (0, -1), (0, +1)]
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
     def bfs(i, j):
-        stack = [(i, j)]
-        while stack:
-            x, y = stack.pop()
+        dq = collections.deque([(i, j)])
+        while dq:
+            x, y = dq.popleft()
             for dx, dy in directions:
                 nx, ny = x + dx, y + dy
                 if 0 <= nx < n and 0 <= ny < m and grid[nx][ny] == "1":
                     grid[nx][ny] = "0"
-                    stack.append((nx, ny))
+                    dq.append((nx, ny))
 
     res = 0
     for i in range(n):
