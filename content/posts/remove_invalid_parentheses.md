@@ -1,6 +1,6 @@
 ---
 title: 301. Remove Invalid Parentheses
-description:
+description: bfs using to find first valid string by currentStr[:j] + currentStr[j + 1:]
 date: 2023-10-26
 tags: [ arrays, dfs-bfs, hard ]
 ---
