@@ -6,16 +6,17 @@ tags: [ arrays, sort, greedy, medium ]
 ---
 
 ```python
-# O(n * log(n)) time || O(n) space
+# O(n * log(n)) time || O(log(n)) space
 def erase_overlap_intervals(self, intervals: List[List[int]]) -> int:
     intervals.sort(key=lambda x: x[1])
 
-    end, res = intervals[0][1], 0
+    res = 0
+    end = intervals[0][1]
     for interval in intervals[1:]:
-        if interval[0] >= end:
-            end = interval[1]
-        else:
+        if interval[0] < end:
             res += 1
+        else:
+            end = interval[1]
 
     return res
 ```
