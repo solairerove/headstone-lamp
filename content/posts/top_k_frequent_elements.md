@@ -32,36 +32,34 @@ largest) element without having to sort the entire list.
 ```python
 # O(n) time || O(n) space
 def top_k_frequent_quickselect(self, nums: List[int], k: int) -> List[int]:
+    def partition(arr, low, high):
+        pivot = arr[high][1]
+        i = low
+        for j in range(low, high):
+            if arr[j][1] > pivot:
+                arr[i], arr[j] = arr[j], arr[i]
+                i += 1
+
+        arr[i], arr[high] = arr[high], arr[i]
+
+        return i
+
+    def quickselect(arr, low, high):
+        if low == high:
+            return arr[low]
+
+        i = partition(arr, low, high)
+        if k == i:
+            return arr[k]
+        elif k < i:
+            return quickselect(arr, low, i - 1)
+        else:
+            return quickselect(arr, i + 1, high)
+
     unique = list(collections.Counter(nums).items())  # (number, frequency) pairs list
-    quickselect(self, unique, 0, len(unique) - 1, k - 1)
+    quickselect(unique, 0, len(unique) - 1)
 
     return [pair[0] for pair in unique[:k]]
-
-
-def quickselect(self, arr, low, high, k):
-    if low == high:
-        return arr[low]
-
-    i = partition(self, arr, low, high)
-    if k == i:
-        return arr[k]
-    elif k < i:
-        return quickselect(self, arr, low, i - 1, k)
-    else:
-        return quickselect(self, arr, i + 1, high, k)
-
-
-def partition(self, arr, low, high):
-    pivot = arr[high][1]
-    i = low
-    for j in range(low, high):
-        if arr[j][1] > pivot:
-            arr[i], arr[j] = arr[j], arr[i]
-            i += 1
-
-    arr[i], arr[high] = arr[high], arr[i]
-
-    return i
 ```
 
 Use a bucket sort-like approach which has an average case time complexity of O(n), where n is the length of the nums
