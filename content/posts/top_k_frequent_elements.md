@@ -5,6 +5,71 @@ date: 2023-11-01
 tags: [ arrays, heap, medium ]
 ---
 
+### Quickselect Explained:
+
+Quickselect is a cousin of the quicksort algorithm. The idea behind quickselect is to find the k-th smallest (or
+largest) element without having to sort the entire list.
+
+#### Steps of Quickselect:
+
+1) Choose a 'pivot' element from the list and partition the other elements into two sub-arrays, according to whether
+   they are less than or greater than the pivot.
+2) Reorder the list so that all elements less than the pivot come before (in no particular order) and all elements
+   greater than the pivot come after it (also in no particular order).
+3) The 'pivot' is now in its final sorted position.
+4) Compare the k-th index with the index of the pivot:
+    - If they are the same, we found our k-th element.
+    - If the k-th index is less than the pivot index, repeat the process with the left sub-array.
+    - If the k-th index is greater than the pivot index, repeat the process with the right sub-array.
+
+### Application to the Problem:
+
+1) Create a frequency dictionary for the numbers.
+2) Convert the dictionary into a list of pairs.
+3) Use quickselect to find the k-th most frequent pair.
+4) Return numbers with frequencies that are greater than or equal to the k-th pair's frequency.
+
+```python
+# O(n) time || O(n) space
+def top_k_frequent_quickselect(self, nums: List[int], k: int) -> List[int]:
+    if len(nums) == k:
+        return nums
+
+    freq_dict = collections.Counter(nums)
+    unique_items = list(freq_dict.items())
+
+    kth_pair = quickselect(self, unique_items, 0, len(unique_items) - 1, k - 1)
+    kth_freq = kth_pair[1]
+
+    return [item[0] for item in unique_items if item[1] >= kth_freq]
+
+
+def quickselect(self, arr, low, high, k):
+    if low == high:
+        return arr[low]
+
+    pivot_idx = partition(self, arr, low, high)
+    if k == pivot_idx:
+        return arr[k]
+    elif k < pivot_idx:
+        return quickselect(self, arr, low, pivot_idx - 1, k)
+    else:
+        return quickselect(self, arr, pivot_idx + 1, high, k)
+
+
+def partition(self, arr, low, high):
+    pivot = arr[high][1]
+    i = low
+    for j in range(low, high):
+        if arr[j][1] > pivot:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+
+    arr[i], arr[high] = arr[high], arr[i]
+
+    return i
+```
+
 Use a bucket sort-like approach which has an average case time complexity of O(n), where n is the length of the nums
 list. The idea is to:
 
