@@ -32,28 +32,25 @@ largest) element without having to sort the entire list.
 ```python
 # O(n) time || O(n) space
 def top_k_frequent_quickselect(self, nums: List[int], k: int) -> List[int]:
-    if len(nums) == k:
-        return nums
-
     cnt = collections.Counter(nums)
     unique = list(cnt.items())  # (number, frequency) pairs list
 
-    kth_freq = quickselect(self, unique, 0, len(unique) - 1, k - 1)[1]  # kth pair
+    quickselect(self, unique, 0, len(unique) - 1, k - 1)
 
-    return [item[0] for item in unique if item[1] >= kth_freq]
+    return [pair[0] for pair in unique[:k]]
 
 
 def quickselect(self, arr, low, high, k):
     if low == high:
         return arr[low]
 
-    pivot_idx = partition(self, arr, low, high)
-    if k == pivot_idx:
+    i = partition(self, arr, low, high)
+    if k == i:
         return arr[k]
-    elif k < pivot_idx:
-        return quickselect(self, arr, low, pivot_idx - 1, k)
+    elif k < i:
+        return quickselect(self, arr, low, i - 1, k)
     else:
-        return quickselect(self, arr, pivot_idx + 1, high, k)
+        return quickselect(self, arr, i + 1, high, k)
 
 
 def partition(self, arr, low, high):
