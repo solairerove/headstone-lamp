@@ -1,6 +1,6 @@
 ---
 title: 347. Top K Frequent Elements
-description:
+description: heapq to obtain the top k frequent numbers in O(nlogk) time
 date: 2023-11-01
 tags: [ arrays, heap, medium ]
 ---
