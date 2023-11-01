@@ -5,6 +5,19 @@ date: 2023-11-01
 tags: [ arrays, heap, medium ]
 ---
 
+- use Python's heapq library to obtain the top k frequent numbers in O(nlogk) time.
+
+```python
+# O(n * log(k)) time || O(n + k) space
+def top_k_frequent_heap(self, nums: List[int], k: int) -> List[int]:
+    if len(nums) == k:
+        return nums
+
+    cnt = collections.Counter(nums)
+
+    return heapq.nlargest(k, cnt.keys(), key=cnt.get)
+```
+
 - calculate how frequent you can see num in arr
 - create frequency array where index is frequency and value is arr of keys
 - traverse from end to start and append to res
