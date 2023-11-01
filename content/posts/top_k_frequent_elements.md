@@ -35,13 +35,12 @@ def top_k_frequent_quickselect(self, nums: List[int], k: int) -> List[int]:
     if len(nums) == k:
         return nums
 
-    freq_dict = collections.Counter(nums)
-    unique_items = list(freq_dict.items())
+    cnt = collections.Counter(nums)
+    unique = list(cnt.items())  # (number, frequency) pairs list
 
-    kth_pair = quickselect(self, unique_items, 0, len(unique_items) - 1, k - 1)
-    kth_freq = kth_pair[1]
+    kth_freq = quickselect(self, unique, 0, len(unique) - 1, k - 1)[1]  # kth pair
 
-    return [item[0] for item in unique_items if item[1] >= kth_freq]
+    return [item[0] for item in unique if item[1] >= kth_freq]
 
 
 def quickselect(self, arr, low, high, k):
