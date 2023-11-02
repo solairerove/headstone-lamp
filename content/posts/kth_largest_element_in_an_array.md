@@ -1,7 +1,7 @@
 ---
-title: 347. Top K Frequent Elements
+title: 215. Kth Largest Element in an Array
 description: heapq to obtain the k largest number in O(nlogk) time.
-date: 2023-11-01
+date: 2023-11-02
 tags: [ arrays, heap, medium ]
 ---
 
