@@ -46,20 +46,20 @@ def top_k_frequent_quickselect(self, nums: List[int], k: int) -> List[int]:
 
     def quickselect(arr, low, high):
         if low == high:
-            return arr[low]
+            return
 
         i = partition(arr, low, high)
-        if k == i:
-            return arr[k]
-        elif k < i:
-            return quickselect(arr, low, i - 1)
+        if i == k:
+            return
+        elif i < k:
+            quickselect(arr, i + 1, high)
         else:
-            return quickselect(arr, i + 1, high)
+            quickselect(arr, low, i - 1)
 
-    unique = list(collections.Counter(nums).items())  # (number, frequency) pairs list
-    quickselect(unique, 0, len(unique) - 1)
+    pairs = list(collections.Counter(nums).items())  # [(key, freq)]
+    quickselect(pairs, 0, len(pairs) - 1)
 
-    return [pair[0] for pair in unique[:k]]
+    return [pair[0] for pair in pairs[:k]]
 ```
 
 Use a bucket sort-like approach which has an average case time complexity of O(n), where n is the length of the nums
