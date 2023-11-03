@@ -2,7 +2,7 @@
 title: 435. Non-overlapping Intervals
 description: sort the intervals based on their end times, check for next start and last end overlap
 date: 2023-10-30
-tags: [ arrays, sort, greedy, medium ]
+tags: [ arrays, sorting, greedy, medium ]
 ---
 
 ```python

@@ -2,7 +2,7 @@
 title: 75. Sort Colors
 description: This is the famous "Dutch National Flag" problem.
 date: 2023-11-02
-tags: [ arrays, two-pointers, sort, medium ]
+tags: [ arrays, two-pointers, sorting, medium ]
 ---
 
 ```python
