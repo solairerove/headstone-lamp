@@ -25,8 +25,7 @@ def quickselect(arr, low, high, k):
     if low == high:
         return arr[low]
 
-    pivot_idx = random.randint(low, high)
-    lt, gt = partition(arr, low, high, pivot_idx)
+    lt, gt = partition(arr, low, high, random.randint(low, high))
     if k < lt:
         return quickselect(arr, low, lt - 1, k)
     elif k <= gt:
@@ -35,15 +34,15 @@ def quickselect(arr, low, high, k):
         return quickselect(arr, gt + 1, high, k)
 
 
-def partition(arr, low, high, pivot_idx):
-    pivot = arr[pivot_idx]
+def partition(arr, low, high, idx):
+    pivot = arr[idx]
     lt, i, gt = low, low, high
     while i <= gt:
         if arr[i] < pivot:
-            arr[lt], arr[i] = arr[i], arr[lt]
-            lt, i = lt + 1, i + 1
+            arr[i], arr[lt] = arr[lt], arr[i]
+            i, lt = i + 1, lt + 1
         elif arr[i] > pivot:
-            arr[gt], arr[i] = arr[i], arr[gt]
+            arr[i], arr[gt] = arr[gt], arr[i]
             gt -= 1
         else:
             i += 1
