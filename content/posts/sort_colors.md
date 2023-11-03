@@ -11,10 +11,10 @@ def sort_colors(self, nums: List[int]) -> None:
     lt, i, gt = 0, 0, len(nums) - 1
     while i <= gt:
         if nums[i] == 0:
-            nums[lt], nums[i] = nums[i], nums[lt]
-            lt, i = lt + 1, i + 1
+            nums[i], nums[lt] = nums[lt], nums[i]
+            i, lt = i + 1, lt + 1
         elif nums[i] == 2:
-            nums[gt], nums[i] = nums[i], nums[gt]
+            nums[i], nums[gt] = nums[gt], nums[i]
             gt -= 1
         else:
             i += 1
