@@ -2,7 +2,7 @@
 title: 438. Find All Anagrams in a String
 description: sliding window - decrement the count of the character that is left behind i - len(p)
 date: 2023-10-24
-tags: [ array, sliding-window, medium ] 
+tags: [ sliding-window, array, medium ] 
 ---
 
 ```python
