@@ -1,6 +1,6 @@
 ---
 title: 295. Find Median from Data Stream
-description:
+description: use to balanced heaps, one for highest from small and second for lowest among large number.
 date: 2023-11-07
 tags: [ heap, hard ] 
 ---
