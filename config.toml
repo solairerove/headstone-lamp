@@ -1,6 +1,6 @@
 baseURL = 'https://solairerove.github.io/'
 languageCode = 'en-us'
-title = 'Headstone lamp - leetcode grind'
+title = 'Headstone lamp - leetcode grind (43)'
 theme="archie"
 copyright = "© solairerove"
 
