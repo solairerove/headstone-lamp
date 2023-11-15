@@ -2,7 +2,7 @@
 title: 101. Symmetric Tree
 description: you can solve it the same method as in leetcode 100 same tree
 date: 2023-11-14
-tags: [ trees, easy ] 
+tags: [ trees, dfs-bfs, easy ] 
 ---
 
 ```python

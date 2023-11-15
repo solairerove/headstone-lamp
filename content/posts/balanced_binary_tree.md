@@ -1,8 +1,8 @@
 ---
 title: 110. Balanced Binary Tree
-description: you can solve it the same method as in leetcode 100 same tree
+description: dfs, compute height and check for balance
 date: 2023-11-15
-tags: [ trees, easy ] 
+tags: [ trees, dfs-bfs, easy ] 
 ---
 
 ```python

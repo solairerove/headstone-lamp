@@ -2,7 +2,7 @@
 title: 100. Same Tree
 description: traverse through trees and recognize if there's same structure and val
 date: 2023-11-14
-tags: [ trees, easy ] 
+tags: [ trees, dfs-bfs, easy ] 
 ---
 
 To solve this problem, we need to compare two binary trees, `p` and `q`, and determine if they are identical.
