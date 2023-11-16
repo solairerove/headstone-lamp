@@ -20,6 +20,33 @@ def is_balanced(self, root: Optional[TreeNode]) -> bool:
     return dfs(root)[1]
 ```
 
+```python
+# O(n) time || O(n) space
+def is_balanced_dfs(self, root: Optional[TreeNode]) -> bool:
+    stack = [(root, 0, False)]
+    heights = {}
+    while stack:
+        node, height, visited = stack.pop()
+
+        if not node:
+            continue
+
+        if visited:
+            l_height = heights.get(node.left, 0)
+            r_height = heights.get(node.right, 0)
+
+            if abs(l_height - r_height) > 1:
+                return False
+
+            heights[node] = 1 + max(l_height, r_height)
+        else:
+            stack.append((node, height, True))
+            stack.append((node.left, height + 1, False))
+            stack.append((node.right, height + 1, False))
+
+    return True
+```
+
 DFS is ideal for this problem because it allows us to compute the height of each subtree while simultaneously checking
 if the tree is balanced.
 
