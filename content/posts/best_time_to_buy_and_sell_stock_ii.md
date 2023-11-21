@@ -16,6 +16,12 @@ def max_profit(self, prices: List[int]) -> int:
     return res
 ```
 
+```python
+# O(n) time || O(1) space
+def max_profit_lambda(self, prices: List[int]) -> int:
+    return reduce(lambda profit, i: profit + max(prices[i] - prices[i - 1], 0), range(1, len(prices)), 0)
+```
+
 This LeetCode problem asks for the maximum profit that can be achieved by buying and selling stocks, with the
 possibility of conducting multiple transactions. However, you can't engage in multiple transactions at once (i.e., you
 must sell the stock before you buy again).
