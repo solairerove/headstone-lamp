@@ -18,5 +18,11 @@ def max_profit(self, prices: List[int]) -> int:
     return res
 ```
 
+```python
+# O(n) time || O(1) space
+def max_profit_lambda(self, prices: List[int]) -> int:
+    return reduce(lambda acc, price: (min(acc[0], price), max(acc[1], price - acc[0])), prices[1:], (prices[0], 0))[1]
+```
+
 The idea is to find the maximum difference between two numbers in the array where the smaller number comes before the
 larger number. This difference represents the maximum profit.
