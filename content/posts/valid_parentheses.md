@@ -8,15 +8,14 @@ tags: [ arrays, stack, easy ]
 ```python
 # O(n) time || O(n) space
 def is_valid(self, s: str) -> bool:
-    close_to_open, stack = {")": "(", "]": "[", "}": "{"}, []
-    for c in s:
-        if c not in close_to_open:
-            stack.append(c)
-        elif stack:
-            if stack.pop() != close_to_open[c]:
+    brackets = {')': '(', ']': '[', '}': '{'}
+    stack = []
+    for br in s:
+        if br in brackets:
+            if not stack or stack.pop() != brackets[br]:
                 return False
         else:
-            return False
+            stack.append(br)
 
     return not stack
 ```
