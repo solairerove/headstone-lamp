@@ -2,7 +2,7 @@
 title: 242. Valid Anagram
 description: count the occurrences of each character in both strings and then compare the counts.
 date: 2023-10-24
-tags: [ array, easy ] 
+tags: [ arrays, easy ] 
 ---
 
 ```python

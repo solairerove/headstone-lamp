@@ -2,7 +2,7 @@
 title: 409. Longest Palindrome
 description: the potential length of the palindrome is len(s) - odds_cnt + bool(odds_cnt)
 date: 2023-10-24
-tags: [ array, easy ] 
+tags: [ arrays, easy ] 
 ---
 
 ```python

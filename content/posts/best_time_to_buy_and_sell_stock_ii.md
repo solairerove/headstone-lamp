@@ -2,7 +2,7 @@
 title: 122. Best Time to Buy and Sell Stock II
 description: whenever `prices[i]` is greater than `prices[i - 1]`, we can consider it as a profit-making
 date: 2023-11-21
-tags: [ dp, array, medium ]
+tags: [ dp, arrays, medium ]
 ---
 
 ```python

@@ -2,7 +2,7 @@
 title: 121. Best Time to Buy and Sell Stock
 description: find the maximum difference between two numbers in the array
 date: 2023-11-21
-tags: [ dp, array, easy ]
+tags: [ dp, arrays, easy ]
 ---
 
 ```python

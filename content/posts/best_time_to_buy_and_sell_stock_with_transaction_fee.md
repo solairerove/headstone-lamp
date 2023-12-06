@@ -2,7 +2,7 @@
 title: 714. Best Time to Buy and Sell Stock with Transaction Fee
 description: you only want to complete a transaction when the profit exceeds the transaction fee
 date: 2023-11-22
-tags: [ dp, array, medium ]
+tags: [ dp, arrays, medium ]
 ---
 
 ```python

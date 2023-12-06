@@ -2,7 +2,7 @@
 title: 239. Sliding Window Maximum
 description: maintain a deque of candidates idx in decreasing order only from the current sliding window
 date: 2023-11-07
-tags: [ sliding-window, array, hard ] 
+tags: [ sliding-window, arrays, hard ] 
 ---
 
 ```python

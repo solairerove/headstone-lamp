@@ -2,7 +2,7 @@
 title: 1. Two Sum
 description: as we iterate through the array, we check if the complement (target - num) in map
 date: 2023-10-23
-tags: [ array, easy ] 
+tags: [ arrays, easy ] 
 ---
 
 ```python

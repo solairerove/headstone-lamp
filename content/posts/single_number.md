@@ -2,7 +2,7 @@
 title: 136. Single Number
 description: perform the XOR operation with unique, this will "cancel out" the duplicates
 date: 2023-10-23
-tags: [ array, math, bit-manipulation, easy ] 
+tags: [ arrays, math, bit-manipulation, easy ] 
 ---
 
 ```python

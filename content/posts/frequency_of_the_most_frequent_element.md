@@ -2,7 +2,7 @@
 title: 1838. Frequency of the Most Frequent Element
 description: find the longest subarray in which the difference between the max and min
 date: 2023-11-18
-tags: [ sliding-window, array, medium ]
+tags: [ sliding-window, arrays, medium ]
 ---
 
 ```python

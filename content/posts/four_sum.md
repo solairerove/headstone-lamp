@@ -2,7 +2,7 @@
 title: 18. 4Sum
 description: fix the first two numbers using nested loops find the other two numbers using the two-pointer approach
 date: 2023-10-24
-tags: [ array, medium ] 
+tags: [ arrays, medium ] 
 ---
 
 ```python

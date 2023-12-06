@@ -2,7 +2,7 @@
 title: 49. Group Anagrams
 description: for each string in the given array, sort its characters and use the sorted string as a key to the hashmap
 date: 2023-10-24
-tags: [ array, medium ] 
+tags: [ arrays, medium ] 
 ---
 
 ```python

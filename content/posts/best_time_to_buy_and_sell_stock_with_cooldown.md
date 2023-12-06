@@ -2,7 +2,7 @@
 title: 309. Best Time to Buy and Sell Stock with Cooldown
 description: buy, sell, cooldown
 date: 2023-11-22
-tags: [ dp, array, medium ]
+tags: [ dp, arrays, medium ]
 ---
 
 ```python
