@@ -8,14 +8,12 @@ tags: [ dp, arrays, easy ]
 ```python
 # O(n) time || O(1) space
 def max_profit(self, prices: List[int]) -> int:
-    min_price, res = prices[0], 0
-    for price in prices[1:]:
-        if price < min_price:
-            min_price = price
-        else:
-            res = max(res, price - min_price)
+    min_price, max_profit = prices[0], 0
+    for i in range(1, len(prices)):
+        min_price = min(min_price, prices[i])
+        max_profit = max(max_profit, prices[i] - min_price)
 
-    return res
+    return max_profit
 ```
 
 ```python
