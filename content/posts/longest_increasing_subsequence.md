@@ -20,6 +20,26 @@ def length_of_lis_bottom_up(self, nums: List[int]) -> int:
 
 ```python
 # O(n * log(n)) time || O(n) space
+def length_of_lis_bs(self, nums: List[int]) -> int:
+    tails = [0] * len(nums)
+    res = 0
+    for num in nums:
+        low, high = 0, res
+        while low != high:
+            mid = low + (high - low) // 2
+            if tails[mid] < num:
+                low = mid + 1
+            else:
+                high = mid
+
+        tails[low] = num
+        res = max(res, low + 1)
+
+    return res
+```
+
+```python
+# O(n * log(n)) time || O(n) space
 def length_of_lis(self, nums: List[int]) -> int:
     sub = []
     for n in nums:
